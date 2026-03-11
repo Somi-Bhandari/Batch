@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batch 2081 | The Legacy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #050505; color: #ffffff; font-family: 'Inter', sans-serif; overflow: hidden; }
+        
+        /* Navigation System */
+        .page { display: none; height: 100vh; width: 100vw; flex-direction: column; align-items: center; padding: 2rem; position: absolute; top: 0; left: 0; }
+        .active-page { display: flex; animation: fadeIn 0.8s ease-in-out; }
+        
+        /* Internal Scroll for Long Pages */
+        .scrollable-content { overflow-y: auto; width: 100%; max-width: 1200px; padding-bottom: 120px; scrollbar-width: thin; scrollbar-color: #bf953f #050505; }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
+        
+        .gold-text { background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; }
+        
+        /* Premium Buttons */
+        .nav-btn { border: 1px solid #bf953f; color: #bf953f; padding: 12px 30px; border-radius: 50px; transition: 0.3s; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; font-size: 0.75rem; background: rgba(0,0,0,0.5); }
+        .nav-btn:hover { background: #bf953f; color: #000; box-shadow: 0 0 25px rgba(191, 149, 63, 0.5); }
+        .fixed-nav { position: fixed; bottom: 30px; display: flex; gap: 15px; z-index: 100; }
+    </style>
+</head>
+<body>
+
+    <audio id="bgMusic" loop>
+        <source src="your-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <section id="page1" class="page active-page justify-center">
+        <img src="graduation-portrait.jpg" class="w-64 h-80 object-cover rounded-2xl border-2 border-yellow-700 mb-8 shadow-2xl">
+        <h2 class="text-sm tracking-[0.5em] text-gray-500 mb-4 uppercase">Journey Since Graduation</h2>
+        <div id="live-timer" class="text-4xl md:text-6xl font-bold gold-text mb-10 font-mono tracking-tighter">00d 00h 00m 00s</div>
+        <button onclick="showPage('page2'); playMusic();" class="nav-btn">Enter The Legacy</button>
+    </section>
+
+    <section id="page2" class="page justify-center">
+        <img src="hero-group.jpg" class="w-full max-w-4xl rounded-3xl shadow-2xl mb-8 border border-white/10">
+        <div class="max-w-3xl text-center">
+            <h1 class="text-5xl font-extrabold gold-text mb-6">BATCH 2081: THE ORIGINALS</h1>
+            <p class="text-gray-300 leading-relaxed italic text-lg px-6">
+                From the very first assembly to the final goodbye, our journey was defined by bonds that no textbook could ever explain. 
+                We navigated the highs of victory and the lows of exams as one unbreakable unit, proving that strength lies in unity. 
+                The walls of our school may hold our echoes, but the world will now witness our impact. 
+                Batch 2081 isn't just a group of students; we are a legacy of dreamers and achievers. 
+                As we spread our wings, let this platform be a reminder of where our story began. 
+                Together we stood, and together we shall rise in our own unique paths. 
+                To the legends of 2081—your time is now.
+            </p>
+        </div>
+        <div class="fixed-nav">
+            <button onclick="showPage('page1')" class="nav-btn">Back</button>
+            <button onclick="showPage('page3')" class="nav-btn">Go to Our Memories</button>
+        </div>
+    </section>
+
+    <section id="page3" class="page">
+        <div class="scrollable-content pt-10 px-4">
+            <h2 class="text-4xl font-bold gold-text mb-16 text-center tracking-widest uppercase">Iconic Milestones</h2>
+            <div class="space-y-12">
+                <div class="glass p-8 flex flex-col md:flex-row gap-8 items-center">
+                    <img src="mem1.jpg" class="w-full md:w-1/2 h-64 object-cover rounded-xl">
+                    <div>
+                        <h3 class="text-2xl font-bold text-yellow-500 mb-4 uppercase">The Sports Meet Triumph</h3>
+                        <p class="text-gray-400 leading-relaxed">It was the day the air felt electric with competition and the spirit of Batch 2081. We cheered until our voices gave out, standing shoulder to shoulder as our classmates broke records. Every goal scored and every race won felt like a personal victory for all of us. The memory of that final whistle and our collective roar still sends shivers down our spines. It wasn't just about the trophies; it was about the undeniable proof that we were the strongest batch.</p>
+                    </div>
+                </div>
+                <div class="glass p-8 flex flex-col md:flex-row-reverse gap-8 items-center">
+                    <img src="mem2.jpg" class="w-full md:w-1/2 h-64 object-cover rounded-xl">
+                    <div>
+                        <h3 class="text-2xl font-bold text-yellow-500 mb-4 uppercase">The Cultural Night Gala</h3>
+                        <p class="text-gray-400 leading-relaxed">Lights, music, and a stage that felt like the center of the universe. We saw our friends transform from students into performers, showing talents we never knew existed. The laughter during the skits and the silence during the soulful melodies created a bond that words can't capture. It was the night we realized that our diversity was our greatest strength. We danced like no one was watching, celebrating the beautiful chaos of our youth.</p>
+                    </div>
+                </div>
+                <div class="glass p-8 flex flex-col md:flex-row gap-8 items-center">
+                    <img src="mem3.jpg" class="w-full md:w-1/2 h-64 object-cover rounded-xl">
+                    <div>
+                        <h3 class="text-2xl font-bold text-yellow-500 mb-4 uppercase">The Final Farewell Day</h3>
+                        <p class="text-gray-400 leading-relaxed">2081-12-12 at 2:16 PM—the moment time seemed to freeze in our school corridor. With pens in hand and ink on our shirts, we signed our names on each other's memories forever. There were no toppers or back-benchers that day, only friends holding back tears as the realization set in. We walked out of those gates differently than we walked in—more mature, more connected, and deeply grateful. It was the end of an era, but the beginning of an eternal brotherhood.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fixed-nav">
+            <button onclick="showPage('page2')" class="nav-btn">Back</button>
+            <button onclick="showPage('page4')" class="nav-btn">Meet Our Mentors</button>
+        </div>
+    </section>
+
+    <section id="page4" class="page">
+        <div class="scrollable-content pt-10 px-4">
+            <h2 class="text-4xl font-bold gold-text mb-16 text-center uppercase">Our Guiding Lights</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass p-6 text-center group">
+                    <img src="t1.jpg" class="w-24 h-24 rounded-full mx-auto border-2 border-yellow-600 mb-4 group-hover:scale-110 transition-transform">
+                    <h4 class="text-xl font-bold mb-3">Principal Sir</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">The pillar of our institution who balanced discipline with a fatherly care. He didn't just manage the school; he managed our futures with wisdom and patience. His speeches in the morning assembly often gave us the fuel to push through the hardest weeks. We owe our sense of direction to his unwavering vision and high standards. A true leader who saw the potential in Batch 2081 before we saw it in ourselves.</p>
+                </div>
+                <div class="glass p-6 text-center group">
+                    <img src="t2.jpg" class="w-24 h-24 rounded-full mx-auto border-2 border-yellow-600 mb-4 group-hover:scale-110 transition-transform">
+                    <h4 class="text-xl font-bold mb-3">Math Dept. Head</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">The one who proved that every problem has a solution if you look at it from the right angle. Her patience with our endless questions was legendary, and her smile made even the toughest exams feel manageable. She taught us logic, but more importantly, she taught us to never give up on a challenge. Beyond numbers, she showed us the value of hard work and persistence. A mentor who calculated our success with love.</p>
+                </div>
+            </div>
+        </div>
+        <div class="fixed-nav">
+            <button onclick="showPage('page3')" class="nav-btn">Back</button>
+            <button onclick="showPage('page5')" class="nav-btn">Final Dedication</button>
+        </div>
+    </section>
+
+    <section id="page5" class="page justify-center">
+        <div class="max-w-5xl w-full">
+            <img src="final-group.jpg" class="w-full rounded-3xl shadow-2xl mb-12 border border-yellow-900/30">
+            <div class="glass p-10 text-center">
+                <h2 class="text-3xl font-bold gold-text mb-6 uppercase">To the Class of Champions</h2>
+                <p class="text-xl leading-relaxed text-gray-200 font-light">
+                    To every soul that made Batch 2081 what it was: this is for you. Whether you were the loud laughter in the canteen or the quiet brilliance in the library, you were the heartbeat of our batch. We leave behind our uniforms, but we carry forward the values and friendships that will never fade. Let the world know that 2081 wasn't just a year—it was the birth of leaders, innovators, and lifelong brothers. See you at the top!
+                </p>
+            </div>
+        </div>
+        <div class="fixed-nav">
+            <button onclick="showPage('page4')" class="nav-btn">Back</button>
+            <button onclick="showPage('page1')" class="nav-btn">Return Home</button>
+        </div>
+    </section>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active-page'));
+            const target = document.getElementById(pageId);
+            target.classList.add('active-page');
+            
+            // Reset scroll position when entering a new page
+            const scrollArea = target.querySelector('.scrollable-content');
+            if (scrollArea) scrollArea.scrollTop = 0;
+        }
+
+        function playMusic() {
+            const music = document.getElementById('bgMusic');
+            music.volume = 0.4;
+            music.play().catch(() => console.log("User interaction required for audio"));
+        }
+
+        // UPDATED COUNTDOWN: 2081-12-12 14:16:30
+        // (Assuming 2081-12-12 BS is roughly March 25, 2025 AD)
+        const graduationTime = new Date("March 25, 2025 14:16:30").getTime();
+
+        setInterval(() => {
+            const now = new Date().getTime();
+            const diff = now - graduationTime;
+
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById("live-timer").innerHTML = `${d}d ${h}h ${m}m ${s}s`;
+        }, 1000);
+    </script>
+</body>
+</html>
